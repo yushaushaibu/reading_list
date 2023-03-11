@@ -5,11 +5,13 @@ function App() {
   const [books, setBooks] = useState([]);
 
   const createBook = (title) => {
-    console.log("Add book with title: ", title);
+    const updatedBooks = [...books, { id: 123, title }];
+    setBooks(updatedBooks);
   };
 
   return (
     <div>
+      {books.length}
       <BookCreate onCreate={createBook} />
     </div>
   );
